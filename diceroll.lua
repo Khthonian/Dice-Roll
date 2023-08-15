@@ -14,3 +14,13 @@ function splitInput(input, delimiter)
     end
     return output
 end
+
+-- MAIN
+
+-- Take the dice input
+local input = arg[1] 
+-- Handle incorrect inputs
+if not input then
+    print("Please input a dice as <NdS>.")
+    os.exit(1)
+end
