@@ -38,7 +38,7 @@ local num = tonumber(die[1])
 local faces = tonumber(die[2])
 
 -- Validate the numbers
-if not num or not sides then
+if not num or not faces then
     print("The number of dice or faces is invalid.")
     os.exit(1)
 end
