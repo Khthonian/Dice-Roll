@@ -1,3 +1,5 @@
+#!/usr/bin/env lua
+
 -- Seed the random number generation
 math.randomseed(os.time())
 
