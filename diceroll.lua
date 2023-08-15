@@ -1,7 +1,7 @@
 -- Seed the random number generation
 math.randomseed(os.time())
 
--- Define a function to roll a dice with the user-defined number of faces
+-- Define a function to roll a die with the user-defined number of faces
 function rollDice(faces)
     return math.random(1, faces)
 end
@@ -21,24 +21,37 @@ end
 local input = arg[1] 
 -- Handle incorrect inputs
 if not input then
-    print("Please input a dice as <NdS>.")
+    print("Please input a dice roll as <NdS>.")
     os.exit(1)
 end
 
--- Split the input string into the number of dices and number of faces
+-- Split the input string into the number of dice and number of faces
 local die = splitInput(input, "d")
 -- Handle incorrect input formatting
 if #die ~= 2 then
-    print("Please input a dice as <NdS>.")
+    print("Please input a dice roll as <NdS>.")
     os.exit(1)
 end
 
--- Set the number of die and number of faces
+-- Set the number of dice and number of faces
 local num = tonumber(die[1])
 local faces = tonumber(die[2])
 
 -- Validate the numbers
 if not num or not sides then
-    print("The number of die or faces is invalid.")
+    print("The number of dice or faces is invalid.")
     os.exit(1)
 end
+
+-- Roll the dice
+local totalRoll = 0
+print("Rolls:")
+-- Roll the total number of dice
+for i = 1, num do
+    local roll = rollDice(faces)
+    print(roll)
+    totalRoll = totalRoll + roll
+end
+
+-- Output the final value
+print("Total: ", totalRoll)
