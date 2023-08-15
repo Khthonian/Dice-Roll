@@ -32,3 +32,13 @@ if #die ~= 2 then
     print("Please input a dice as <NdS>.")
     os.exit(1)
 end
+
+-- Set the number of die and number of faces
+local num = tonumber(die[1])
+local faces = tonumber(die[2])
+
+-- Validate the numbers
+if not num or not sides then
+    print("The number of die or faces is invalid.")
+    os.exit(1)
+end
