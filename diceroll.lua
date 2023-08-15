@@ -1,5 +1,3 @@
--- TODO: Implement a roll check functionality 
-
 -- Seed the random number generation
 math.randomseed(os.time())
 
@@ -26,6 +24,9 @@ if not input then
     print("Please input a dice roll as <NdS>.")
     os.exit(1)
 end
+
+-- Take the optional roll check input
+local check = tonumber(arg[2])
 
 -- Split the input string into the number of dice and number of faces
 local die = splitInput(input, "d")
@@ -57,3 +58,12 @@ end
 
 -- Output the final value
 print("Total: ", totalRoll)
+
+-- Evaluate roll check
+if check then
+    if totalRoll >= check then
+        print("Successful Roll!")
+    else
+        print("Failed Roll!")
+    end
+end
