@@ -24,3 +24,11 @@ if not input then
     print("Please input a dice as <NdS>.")
     os.exit(1)
 end
+
+-- Split the input string into the number of dices and number of faces
+local die = splitInput(input, "d")
+-- Handle incorrect input formatting
+if #die ~= 2 then
+    print("Please input a dice as <NdS>.")
+    os.exit(1)
+end
