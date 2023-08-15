@@ -1,3 +1,5 @@
+-- TODO: Implement a roll check functionality 
+
 -- Seed the random number generation
 math.randomseed(os.time())
 
